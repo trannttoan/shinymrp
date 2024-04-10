@@ -16,3 +16,6 @@ Launch the app by executing:
 shinymrp::run_app()
 ```
 Example datasets can be downloaded inside the app. Once it is running, go to the *Interface* subtab under *Learn* in the navigation bar.
+
+---
+*Note: This product uses the Census Bureau Data API but is not endorsed or certified by the Census Bureau.*

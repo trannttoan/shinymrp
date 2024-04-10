@@ -8,7 +8,6 @@ app_ui <- function(request) {
   tagList(
     # Leave this function for adding external resources
     golem_add_external_resources(),
-    # Your application UI logic
     navbarPage("Multilevel Regression & Poststratification",
       theme = shinythemes::shinytheme("flatly"),
       id = "navbar",
@@ -59,6 +58,12 @@ app_ui <- function(request) {
         icon = icon("user", lib = "glyphicon"),
         mod_about_ui(module_ids$about)
       )
+    ),
+    tags$a(
+      "Feedback",
+      href = "https://github.com/trannttoan/shinymrp/issues",
+      target = "_blank",
+      class = "btn btn-info feedback"
     )
   )
 }
