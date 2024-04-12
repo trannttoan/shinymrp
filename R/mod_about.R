@@ -25,7 +25,7 @@ mod_about_ui <- function(id){
         tags$br(),
         tags$h4("References\n"),
         tags$ul(
-          tags$li(tags$a("Y Si (2023). On the Use of Auxiliary Variables in Multilevel Regression and Poststratification, forthcoming by Statistical Science.", href = "https://arxiv.org/abs/2011.00360", target = "_blank")),
+          tags$li(tags$a("Y Si (2024). On the Use of Auxiliary Variables in Multilevel Regression and Poststratification, Statistical Science (forthcoming).", href = "https://arxiv.org/abs/2011.00360", target = "_blank")),
           tags$li(tags$a("Y Si, L Covello, S Wang, T Covello, and A Gelman (2022). Beyond Vaccination Rates: A Synthetic Random Proxy Metric of Total SARS-CoV-2 Immunity Seroprevalence in the Community, Epidemiology, 33(4), 457--464.", href = "https://journals.lww.com/epidem/abstract/2022/07000/beyond_vaccination_rates__a_synthetic_random_proxy.3.aspx", target = "_blank")),
           tags$li(tags$a("L Covello, A Gelman, Y Si, and S Wang (2021). Routine Hospital-Based SARS-CoV-2 Testing Outperforms State-Based Data in Predicting Clinical Burden,  Epidemiology, 32(6), 792--799.", href = "https://journals.lww.com/epidem/abstract/2021/11000/routine_hospital_based_sars_cov_2_testing.4.aspx", target = "_blank")),
           tags$li(tags$a("A Gelman, and B Carpenter (2020), Bayesian analysis of tests with unknown specificity and sensitivity. Journal of the Royal Statistical Society C, Applied Statistics, 69, 1269--1284.", href = "https://academic.oup.com/jrsssc/article/69/5/1269/7058663", target = "_blank")),
