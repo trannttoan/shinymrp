@@ -14,7 +14,7 @@ mod_learn_interface_ui <- function(id){
       column(width = 6, offset = 3,
         tags$br(),
         tags$h3("Workflow"),
-        tags$p("The interface implements a complete workflow of statistical analyses, from data description, model fitting, and diagnostics, to result presentation."),
+        tags$p("The interface implements a complete workflow of statistical analyses, from data description, model fitting, diagnostics, to result presentation."),
         tags$ul(
           tags$li("First, the interface reads and displays the input data."),
           tags$li("Second, it presents descriptive statistics of the patient records and geographic areas, where examples of raw data are also displayed."),
