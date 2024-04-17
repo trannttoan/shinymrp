@@ -69,15 +69,30 @@
     word-break: normal;
   }
 
-  .landing_buttons {
+  .landing_panels {
     width: 100%;
-    height: 250px;
   }
 
-  .landing_buttons button {
-    width: 49.5%;
+  .landing_panel {
+    width: 49%;
     height: inherit;
     margin: 0;
+  }
+
+  .landing_panel_heading {
+    text-align: center;
+    font-size: 1.7em;
+  }
+
+  .landing_panel_body p {
+    margin: 15px 3px 10px 8px;
+    font-size: 1.3em;
+  }
+
+  .landing_panel_body button {
+    width: 100%;
+    margin-top: 10%;
+    font-size: 1.3em;
   }
 
   .interface_buttons {

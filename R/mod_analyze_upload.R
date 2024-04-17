@@ -222,6 +222,7 @@ mod_analyze_upload_server <- function(id, global){
             geojson = filter_geojson(global$extdata$covid$map_geojson, global$mrp_input$levels$county),
             raw_covariates = raw_covariates
           )
+
         } else {
           global$data$state <- to_fips(global$data$state, global$extdata$poll$fips)
 

@@ -76,6 +76,28 @@ mod_analyze_model_server <- function(id, global){
 
     # Model Specification Panel
     output$model_spec <- renderUI({
+      spec_sens_ui <- fluidRow()
+      if(global$covid) {
+        spec_sens_ui <- fluidRow(
+          column(width = 6,
+            numericInput(
+              inputId = ns("spec_kb"),
+              label = "Specificity",
+              min = 0, max = 1, step = 0.01,
+              value = 0.999
+            )
+          ),
+          column(width = 6,
+            numericInput(
+              inputId = ns("sens_kb"),
+              label = "Sensitivity",
+              min = 0, max = 1, step = 0.01,
+              value = 0.7
+            )
+          )
+        )
+      }
+
       tagList(
         tags$div(
           class = "justify pad_bottom",
@@ -279,6 +301,7 @@ mod_analyze_model_server <- function(id, global){
           min = 1, max = 8, step = 1,
           value = 4
         ),
+        spec_sens_ui,
         tags$p(
           "For details about the model fitting process, go to ",
           actionLink(
@@ -470,8 +493,8 @@ mod_analyze_model_server <- function(id, global){
                 global$mrp_input$brms_new,
                 n_iter = n_iter,
                 n_chains = n_chains,
-                spec = if(global$covid) 0.999 else 1,
-                sens = if(global$covid) 0.7 else 1
+                spec = if(global$covid) input$spec_kb else 1,
+                sens = if(global$covid) input$sens_kb else 1
               )
 
               # process brms outputs for plotting
