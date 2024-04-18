@@ -17,8 +17,8 @@ mod_home_ui <- function(id){
         tags$div(class = "panel panel-primary landing_panel",
           tags$div(class = "panel-heading landing_panel_heading", "Spatio-temporal Data"),
           tags$div(class = "panel-body landing_panel_body",
-            tags$p("Collected over time and across geography"),
-            tags$p("Example: COVID19 hospital test records", style = "display: inline"),
+            tags$p("Collected over time and by geography"),
+            tags$p("Example: COVID-19 hospital test records", style = "display: inline"),
             downloadButton(
               outputId = ns("save_st"),
               label = NULL,
@@ -33,7 +33,7 @@ mod_home_ui <- function(id){
         tags$div(class = "panel panel-primary landing_panel",
           tags$div(class = "panel-heading landing_panel_heading", "Cross-sectional Data"),
           tags$div(class = "panel-body landing_panel_body",
-            tags$p("Only time-invariant measures"),
+            tags$p("Collected at a single time point"),
             tags$p("Example: the Cooperative Election Study data", style = "display: inline"),
             downloadButton(
               outputId = ns("save_cs"),
@@ -45,11 +45,7 @@ mod_home_ui <- function(id){
               label = "Start"
             )
           )
-        ),
-
-      ),
-      tags$div(
-        tags$p(tags$i("Note: This product uses the Census Bureau Data API but is not endorsed or certified by the Census Bureau."), style = "text-align: center")
+        )
       )
     )
   )
