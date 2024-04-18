@@ -421,16 +421,19 @@ mod_analyze_visualize_server <- function(id, global){
         output$prev_county <- plotly::renderPlotly({
           req(global$mrp_input)
 
-          global$mrp_input$brms_input |>
-            mutate(fips = county) |>
-            get_raw_weekly_prev(global$extdata$covid$fips) |>
-            mutate(value = max_prev) |>
-            choro_map(
-              global$plotdata$geojson,
-              map_title = "Raw Prevalence Across Weeks",
-              colorbar_title = "Highest\nWeekly\nPrevalence",
-              state = FALSE
-            )
+          if("county" %in% names(global$mrp_input$brms_input)) {
+            global$mrp_input$brms_input |>
+              mutate(fips = county) |>
+              get_raw_weekly_prev(global$extdata$covid$fips) |>
+              mutate(value = max_prev) |>
+              choro_map(
+                global$plotdata$geojson,
+                map_title = "Raw Prevalence Across Weeks",
+                colorbar_title = "Highest\nWeekly\nPrevalence",
+                state = FALSE
+              )
+          }
+
         })
 
       } else {
@@ -554,18 +557,21 @@ mod_analyze_visualize_server <- function(id, global){
         })
 
         output$support_map <- plotly::renderPlotly({
-          req(global$plotdata)
+          req(global$mrp_input)
 
-          global$mrp_input$brms_input |>
-            mutate(fips = state) |>
-            get_raw_support(global$extdata$poll$fips) |>
-            mutate(value = support) |>
-            choro_map(
-              global$plotdata$geojson,
-              map_title = "Percentage of Positive Response",
-              colorbar_title = "%",
-              state = TRUE
-            )
+          if("state" %in% names(global$mrp_input$brms_input)) {
+            global$mrp_input$brms_input |>
+              mutate(fips = state) |>
+              get_raw_support(global$extdata$poll$fips) |>
+              mutate(value = support) |>
+              choro_map(
+                global$plotdata$geojson,
+                map_title = "Percentage of Positive Response",
+                colorbar_title = "%",
+                state = TRUE
+              )
+          }
+
 
         })
       }

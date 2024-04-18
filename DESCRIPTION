@@ -15,6 +15,7 @@ Imports:
     ISOweek,
     janitor,
     patchwork,
+    pkgload,
     plotly,
     purrr,
     RColorBrewer,
